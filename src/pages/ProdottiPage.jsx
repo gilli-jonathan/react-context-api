@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import BudgetContext from "../context/BudgetContext";
+import { useContext } from "react";
 
 
 export default function ProdottiPage(arr) {
@@ -9,17 +11,34 @@ export default function ProdottiPage(arr) {
 
     const [prodotti, setProdotti] = useState([])
 
+    const [filtronella, setFiltronella] = useState(prodotti)
+
+    const { budget, setBudget } = useContext(BudgetContext)
+
     useEffect(() => axiosCall(), [])
+
+    useEffect(() => poverta(), [budget, prodotti])
 
     function axiosCall() {
         axios.get(prodotti_link)
-            .then((resp) => setProdotti(resp.data))
+            .then((resp) => {
+                setProdotti(resp.data);
+                setFiltronella(resp.data);
+            }
+            )
             .catch((err) => alert('errore di caricamento, mi dispiace'));
 
     }
 
+    function poverta() {
 
+        if (budget) {
+            setFiltronella(prodotti.filter((obj) => obj.price < 30));
+        } else {
+            setFiltronella(prodotti)
+        }
 
+    }
     return (
 
         <main>
@@ -30,7 +49,7 @@ export default function ProdottiPage(arr) {
                     {/* GENITORE DELLE CARD */}
                     <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-                        {prodotti.map((obj) => (
+                        {filtronella.map((obj) => (
                             <div className="col mb-5">
                                 <div className="card h-100 p-4">
 
