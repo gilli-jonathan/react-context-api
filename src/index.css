@@ -1,0 +1,69 @@
+:root {
+  --colore-primario: rgb(33,37,41)
+}
+
+#logo-container {
+  height: 100px;
+  aspect-ratio: 1/1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+}
+
+#img-daddy {
+  height: 250px;
+  aspect-ratio: 3/4;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+}
+
+#banner-black {
+  background-color: var(--colore-primario);
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-top: 3rem;
+
+  img {
+   display: block;
+    height:550px;
+    width:750px;
+  }
+
+}
+
+#us-p {
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+  padding-top: 11rem;
+}
+ 
+#jumbo-img {
+
+  height: 500px;
+
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+  
+}
+
+  
+
