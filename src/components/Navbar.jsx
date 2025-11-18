@@ -39,16 +39,16 @@ export default function Navbar() {
 
 
                         <form className="d-flex">
-                            <button className="btn btn-outline-light" type="submit">
+                            <button className="btn btn-outline-light me-2" type="submit">
                                 <i class="bi bi-bag me-1"></i>
                                 <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
                             </button>
 
 
-                            {/* <button className="btn btn-outline-danger" type="submit">
-                                <i class="bi bi-heart-fill"></i>
-                                <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                            </button> */}
+                            <button className="btn btn-outline-warning" type="submit">
+                                <i class="bi bi-coin"></i>
+
+                            </button>
                         </form>
                     </div>
                 </div>

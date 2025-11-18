@@ -22,7 +22,7 @@ export default function ProdottiPage(arr) {
 
     return (
 
-        <main>
+        <main className="vh-100">
 
             <section className="py-5">
                 <div className="container px-4 px-lg-5 mt-5">
