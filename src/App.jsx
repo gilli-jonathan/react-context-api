@@ -1,4 +1,6 @@
+import BudgetContext from './context/BudgetContext'
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
+import { useState } from 'react'
 import DefaultLayout from './Layout/DefaultLayout'
 import HomePage from './pages/HomePage'
 import ChiSiamoPage from './pages/ChiSiamoPage'
@@ -7,9 +9,14 @@ import ProdottoSingoloPage from './pages/ProdottoSingoloPage'
 
 function App() {
 
+  const [budget, setBudget] = useState(false)
+
+
+
 
   return (
-    <>
+    <BudgetContext.Provider value={{ budget, setBudget }}>
+
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
@@ -22,7 +29,7 @@ function App() {
       </BrowserRouter>
 
 
-    </>
+    </BudgetContext.Provider>
   )
 }
 
