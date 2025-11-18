@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import Logo from '../assets/img/ghost.png'
+import BudgetContext from "../context/BudgetContext";
+import { useContext } from "react";
 
 export default function Navbar() {
 
@@ -9,6 +11,11 @@ export default function Navbar() {
         { id: 3, title: 'Chi siamo', link: '/chi-siamo' }
 
     ]
+
+    const { budget, setBudget } = useContext(BudgetContext)
+    console.log(budget);
+
+
 
 
 
@@ -38,21 +45,20 @@ export default function Navbar() {
                         </ul>
 
 
-                        <form className="d-flex">
-                            <button className="btn btn-outline-light me-2" type="submit">
-                                <i class="bi bi-bag me-1"></i>
+                        <div className="d-flex">
+                            <button className="btn btn-outline-light me-2">
+                                <i className="bi bi-bag me-1"></i>
                                 <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
                             </button>
 
 
-                            <button className="btn btn-outline-warning" type="submit">
-                                <i class="bi bi-coin"></i>
-
+                            <button className={`btn btn${budget ? "-warning" : "-outline-warning"}`} onClick={() => setBudget((e) => !e)}>
+                                <i className="bi bi-coin me-1"></i>
                             </button>
-                        </form>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </div >
+            </nav >
 
 
         </>

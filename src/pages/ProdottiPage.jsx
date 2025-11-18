@@ -22,7 +22,7 @@ export default function ProdottiPage(arr) {
 
     return (
 
-        <main className="vh-100">
+        <main>
 
             <section className="py-5">
                 <div className="container px-4 px-lg-5 mt-5">
@@ -55,9 +55,9 @@ export default function ProdottiPage(arr) {
                                     <div className="card-footer pt-0 border-top-0 bg-transparent">
                                         <div className="text-center">
 
-                                            <Link class="btn btn-outline-dark mt-auto m-2" to={`/prodotti/${obj.id}`}>info</Link>
-                                            <a class="btn btn-outline-success mt-auto m-2" href="#"><i class="bi bi-bag-plus-fill"></i></a>
-                                            <a class="btn btn-outline-danger mt-auto m-2" href="#"><i class="bi bi-heart-fill"></i></a>
+                                            <Link className="btn btn-outline-dark mt-auto m-2" to={`/prodotti/${obj.id}`}>info</Link>
+                                            <a className="btn btn-outline-success mt-auto m-2" href="#"><i className="bi bi-bag-plus-fill"></i></a>
+                                            <a className="btn btn-outline-danger mt-auto m-2" href="#"><i className="bi bi-heart-fill"></i></a>
 
                                         </div>
                                     </div>
